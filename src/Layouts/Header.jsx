@@ -1,4 +1,6 @@
 import logo from '../assets/images/Logo(shadowify).png'
+import home from '../assets/images/home-icon.png'
+import search from '../assets/images/search-icon.png'
 const Header = () => {
   return (
     <div className="flex flex-row justify-between text-white text-center h-full pt-2">
@@ -10,12 +12,12 @@ const Header = () => {
       <div className="flex flex-row w-[70%] mb-0.5">
           <div className="flex h-full w-[48px] justify-center items-center rounded-full bg-[rgba(31,31,31)] ml-[2.3%]">
             <img  
-              src="src/assets/images/home-icon.png" alt="Home" 
+              src={home} alt="Home" 
               className="h-7 w-7 object-cover "/>  
           </div>
           <div className="flex flex-row items-center h-full w-[475px] bg-[rgba(31,31,31)] rounded-full ml-2">
             <img 
-              src="src/assets/images/search-icon.png" alt="search" 
+              src={search} alt="search" 
               className="h-7 w-7 mx-3"/>
             <p className="font-sans text-[#b3b3b3] text-md font-normal tracking-wide mt-1">
               What do you want to play?
