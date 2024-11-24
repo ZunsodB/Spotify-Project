@@ -18,7 +18,7 @@ const Header = () => {
               src="/public/images/search-icon.png" alt="search" 
               className="h-7 w-7 mx-3"/>
             <p className="font-sans text-[#b3b3b3] text-md font-normal tracking-wide mt-1">
-              What do you want to play?
+              What do you want to play hey?
             </p>
           </div>
           <div className="right">
