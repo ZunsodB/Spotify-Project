@@ -1,10 +1,10 @@
-
+import logo from '../assets/images/Logo(shadowify).png'
 const Header = () => {
   return (
     <div className="flex flex-row justify-between text-white text-center h-full pt-2">
       <div className="logo h-full">
         <img 
-          src="src/assets/images/Logo(shadowify).png" alt="Logo" 
+          src={logo} alt="Logo" 
           className="h-full w-36 object-cover pb-2" />
       </div>
       <div className="flex flex-row w-[70%] mb-0.5">
