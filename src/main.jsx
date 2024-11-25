@@ -5,14 +5,6 @@ import './assets/css/index.css'
 import { ClerkProvider } from '@clerk/clerk-react'
 import {BrowserRouter as Router} from 'react-router-dom'
 
-<<<<<<< HEAD
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    
-    <App />
-  </StrictMode>,
-)
-=======
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
 if (!PUBLISHABLE_KEY) {
@@ -28,4 +20,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </ClerkProvider>
   </React.StrictMode>,
 )
->>>>>>> ecae11c36e3e7debaf4024379e6a7aa7e0693bce
