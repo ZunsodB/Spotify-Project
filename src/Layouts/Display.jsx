@@ -1,10 +1,8 @@
-
+import React from 'react'
 
 const Display = () => {
   return (
-    <div className="text-white">
-      This is Display
-    </div>
+    <div>Display</div>
   )
 }
 

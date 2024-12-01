@@ -10,9 +10,10 @@ export default function App() {
         <Header />
       </header>
       <main className="flex flex-row flex-1 gap-2 p-2">
-        <aside className="flex bg-[rgba(18,18,18)] rounded-lg w-[29.5%]">
+         <aside className="flex bg-[rgba(18,18,18)] rounded-lg w-[24vw]">
           <Sidebar />
-        </aside>
+        </aside> 
+        
         <section className="flex-1 bg-[rgba(18,18,18)] rounded-lg">
           <Display />
         </section>
