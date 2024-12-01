@@ -1,42 +1,110 @@
 import React from 'react'
 import {assets, songsData} from '../assets/assets'
+import { AiOutlineHeart, AiOutlinePlaySquare } from "react-icons/ai";
+import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
+import { BiRepeat, BiShuffle } from "react-icons/bi";
+import { FaPause, FaPlay } from "react-icons/fa";
+import { LuMonitorSpeaker } from "react-icons/lu";
+import { TbMicrophone2 } from "react-icons/tb";
+import {  PiQueueLight } from "react-icons/pi";
+import { HiOutlineSpeakerWave } from "react-icons/hi2";
+import { TbWindowMaximize } from "react-icons/tb";
+import { HiSpeakerXMark, HiSpeakerWave } from "react-icons/hi2";
+import { BsArrowsAngleContract } from "react-icons/bs";
 
 const MusicPlayer = () => {
   return (
-    <div className='h-[10%] bg-black flex justify-between items-center text-white px-4'>
-        <div className=' hidden lg:flex items-center gap-4'>
+    <div className="fixed w-full flex items-center justify-between bottom-0 left-0 h-20 bg-black">
+        <div className="w-2/12">
+            <div className="flex items-center gap-2">
+                <img src={songsData[0].image} alt="" className="h-12" />
+                <div>
+                    <h3 className="text-xs font-medium mb-1 text-white">
+                        {songsData[0].name || "hi"}
+                    </h3>
+                    <span className="text-[10px] text-white">
+                        {songsData[0].desc.slice(0, 12) || "bndi"}
+                    </span>
+                </div>
+                <AiOutlineHeart color="white" className="ml-3" />
 
-            {/* Odoohondoo assets dotor assets.js gej neej baigaad tendeesee data avj testelne spotify API holbohoor uurchilnu */}
-            <img className='w-12' src={songsData[0].image} alt="" />
-            <div>
-                <p> {songsData[0].name}</p>
-                <p> {songsData[0].desc.slice(0, 12)}</p>
             </div>
         </div>
-        <div className='flex flex-col items-center gap-1 m-auto'>
-          <div className=' flex gap-4'>
 
-            <img className='w-4 cursor-pointer' src={assets.shuffle_icon} alt="" />
-            <img className='w-4 cursor-pointer' src={assets.prev_icon} alt="" />
-            <img className='w-4 cursor-pointer' src={assets.play_icon} alt="" />
-            <img className='w-4 cursor-pointer' src={assets.next_icon} alt="" />
-            <img className='w-4 cursor-pointer' src={assets.loop_icon} alt="" />
 
-          </div>
-          <div className='flex items-center gap-5'>
-            <p>1:06</p>
-            <div className='w-[60vw] max-w-[500px] bg-gray-300 rounded-full cursor-pointer'>
-              <hr className='h-1 border-none w-0 bg-green-800 rounded-full' />
+
+        <div className="w-5/12">
+            <div className="flex justify-center items-center mb-2 gap-6">
+                <BiShuffle color="white" />
+                <IoMdSkipBackward color="white"  />
+                <button className='flex items-center rounded-[50%] bg-white justify-center p-2' >
+                  <FaPlay className='text-black text-lg ml-[2.5px]' />
+                </button>
+                {/* {0 ? (
+                    <button
+                        onClick={handleMaster}
+                        className="flex items-center rounded-[50%] bg-white justify-center p-2"
+                    >
+                        <FaPause className="text-black text-lg" />
+                    </button>
+                ) : (
+                    <button
+                        onClick={handleMaster}
+                        className="flex items-center rounded-[50%] bg-white justify-center p-2"
+                    >
+                        <FaPlay className="text-black text-lg" />
+                    </button>
+                )} */}
+                <IoMdSkipForward color="white" />
+                <BiRepeat color="white"/>
             </div>
-            <p>3:20</p>
-          </div>
+            <div className="flex items-center gap-2">
+                {/* <span className="text-xs">0</span>
+                <input
+                    type="range"
+                    name=""
+                    min={0}
+                    // value={progress}
+                    // disabled={!masterSong.mp3}
+                    // onChange={changeProgress}
+                    className="w-full block"
+                    max={100}
+                />
+                <span className="text-xs">hi </span> */}
+                <div className='w-[60vw] max-w-[800px] bg-gray-300 rounded-full cursor-pointer'>
+                    <hr className='h-1 border-none w-0 bg-green-800 rounded-full'/>
+                </div>
+            </div>
         </div>
-        <div className='hidden lg:flex items-center gap-2 opacity-75 '>
-          <img className='w-4' src={assets.play_icon} alt="" />
 
+
+
+        <div className="w-2/12 flex items-center gap-2">
+            <AiOutlinePlaySquare color="white" className="text-2xl" />
+            <TbMicrophone2 color="white" className="text-2xl" />
+            <PiQueueLight color="white"  className="text-2xl" />
+            <LuMonitorSpeaker color="white" className="text-2xl" />
+            < HiOutlineSpeakerWave color="white" className="text-2xl" />
+
+            {/* <HiSpeakerXMark className="text-2xl" /> */}
+            {/* <input
+                type="range"
+                name=""
+                min={0}
+                className="w-1/2 block"
+                max={100}
+            /> */}
+
+            {/* Duunii changa sul taaruulah heseg */}
+            <div className='w-[60vw] max-w-[70px] bg-gray-300 rounded-full cursor-pointer'>
+                <hr className='h-1 border-none w-0 bg-green-800 rounded-full'/>
+            </div>
+
+            <TbWindowMaximize color="white" className="text-2xl" />
+            <BsArrowsAngleContract color="white" />
         </div>
     </div>
-  )
+  );
 }
 
 export default MusicPlayer
