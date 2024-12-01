@@ -23,17 +23,29 @@ const Header = () => {
             Home
           </div>
         </button>
-        <div className="flex flex-row items-center w-[34vw] bg-[rgba(31,31,31)] rounded-full m-2 py-2">
+        <div className="flex flex-row items-center w-[34vw] bg-[rgba(31,31,31)] rounded-full m-2 py-2 hover:border border-white">
           <img
-            src={search} alt="search" 
-            className="h-7 w-7 mx-3"/>
-          <p className="font-sans text-[#b3b3b3] text-md font-normal tracking-wide mt-1">
-            What do you want to play?
-          </p>
-          <div className='h-[24px] w-[1px] bg-[rgba(124,124,124)] ml-auto'></div>
-          <img 
-            src={browse} alt="browse" 
-            className="h-[28px] w-9 mr-3 ml-[6px] mt-[2px]"/>
+              src={search} 
+              alt="search"
+              className="h-7 w-7 mx-3"
+          />
+          <input 
+              type="text" 
+              placeholder="What do you want to play?" 
+              className="bg-transparent text-white text-md font-normal tracking-wide 
+              w-full outline-none placeholder-[#b3b3b3]"
+          />
+          <div className='h-[24px] w-[1px] bg-[rgba(124,124,124)] ml-auto mr-1.5'></div>
+          <button className="group relative flex flex-col items-center w-[48px] justify-center transform transition-transform duration-300 hover:scale-105">
+              <img
+                  src={browse}
+                  alt="browse"
+                  className="h-[26px] w-[33px] mt-0.5 mr-3 object-cover hover:brightness-200"
+              />
+              <div className="absolute text-white bg-[rgba(31,31,31)] px-2 py-1 rounded-md text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-95 top-[47px]">
+                  Browse
+              </div>
+          </button>
         </div>
         <div className="flex flex-row justify-around items-center h-full w-[32vw] ">
           <div className="flex items-center justify-center ml-[4vw]">
