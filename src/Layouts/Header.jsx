@@ -4,7 +4,7 @@ import search from '../assets/images/search-icon.png'
 import browse from '../assets/images/browse-icon.png'
 import {GoBell} from "../Utils/icons";
 import {GrInstallOption} from '../Utils/icons'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "../Components/ui/avatar"
 const Header = () => {
   return (
     <div className="flex flex-row justify-between text-white bg-black items-center h-full">
