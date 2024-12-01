@@ -41,6 +41,7 @@ const Sidebar = () => {
             </button>
           </div>
         </div>
+        <Sidebarfooter/>
         <Sidebarfooter />
       </div>
       
