@@ -19,7 +19,7 @@ const Header = () => {
             src={home} alt="Home" 
             className="h-7 w-7 object-cover" />  
           {/* Home text appearing hover effect */}
-          <div className="absolute text-white bg-[rgba(31,31,31)] px-2 py-1 rounded-md text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-100 top-[57px]">
+          <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-auto text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[1vh] top-full left-1/2 transform -translate-x-1/2">
             Home
           </div>
         </button>
@@ -42,7 +42,7 @@ const Header = () => {
                   alt="browse"
                   className="h-[26px] w-[33px] mt-0.5 mr-3 object-cover hover:brightness-200"
               />
-              <div className="absolute text-white bg-[rgba(31,31,31)] px-2 py-1 rounded-md text-sm opacity-0 transition-opacity duration-300 group-hover:opacity-95 top-[47px]">
+              <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-auto text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[1vh] top-full left-1/2 transform -translate-x-1/2">
                   Browse
               </div>
           </button>
@@ -57,8 +57,11 @@ const Header = () => {
             <GrInstallOption className='text-[17px] mb-[3px]' />
             <p className='font-semibold text-[12px] tracking-wide'>Install App</p>
           </button>
-          <button className='text-[rgba(179,179,179)] text-xl hover:brightness-200 transform transition-transform duration-50 hover:scale-105'>
-            <GoBell />
+          <button className=' group relative'>
+            <GoBell className='text-[rgba(179,179,179)] group relative text-xl hover:brightness-200 transform transition-transform duration-50 hover:scale-105' />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-auto text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[2vh] top-full left-1/2 transform -translate-x-1/2">
+                  Notification
+            </div>
           </button>
           <button className='bg-gray-400 rounded-full transform transition-transform duration-50 hover:scale-105'>
               <Avatar>

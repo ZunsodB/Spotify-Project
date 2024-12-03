@@ -17,7 +17,7 @@ export default function App() {
           <Display />
         </section>
       </main>
-      <footer className="h-[80px] w-full bg-black">
+      <footer className="h-[12.5vh] w-full bg-black">
         <MusicPlayer />
       </footer>
     </div>

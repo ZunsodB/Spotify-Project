@@ -1,35 +1,35 @@
 import { songsData} from '../assets/assets'
-import { AiOutlineHeart, AiOutlinePlaySquare } from "react-icons/ai";
 import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
 import { BiRepeat, BiShuffle } from "react-icons/bi";
 import {  FaPlay } from "react-icons/fa";
-import { LuMonitorSpeaker } from "react-icons/lu";
-import { TbMicrophone2 } from "react-icons/tb";
-import {  PiQueueLight } from "react-icons/pi";
-import { HiOutlineSpeakerWave } from "react-icons/hi2";
-import { TbWindowMaximize } from "react-icons/tb"
-import { BsArrowsAngleContract } from "react-icons/bs";
-
+import Fullscreen from '../assets/images/Full screen.png'
+import { FiPlusCircle } from "../Utils/icons";
+import LyricsIcon from '../assets/images/Lyrics.png' 
+import Volume from '../assets/images/Volume.png'
+import Queue from '../assets/images/Queue.png'
+import Speaker from '../assets/images/Connect to a device.png'
 const MusicPlayer = () => {
   return (
-    <div className="fixed w-full flex items-center justify-between bottom-0 left-0 h-20 bg-black">
+    <div className="w-auto   flex py-[1.1%] items-center justify-between bottom-0 h-auto bg-black mx-[1.1vw]">
         <div className="w-2/12">
-            <div className="flex items-center gap-2">
-                <img src={songsData[0].image} alt="" className="h-12" />
-                <div>
-                    <h3 className="text-xs font-medium mb-1 text-white">
+            <div className="flex items-center gap-2 relative">
+                <img src={songsData[0].image} alt="" className="h-[8vh] rounded-md" />
+                <div className="flex flex-col justify-center mx-[0.7vw]">
+                    <h3 className="text-sm font-normal mb-1 text-white">
                         {songsData[0].name || "hi"}
                     </h3>
-                    <span className="text-[10px] text-white">
+                    <span className="text-xs text-[rgba(178,178,178)]">
                         {songsData[0].desc.slice(0, 12) || "bndi"}
                     </span>
-                </div>
-                <AiOutlineHeart color="white" className="ml-3" />
-
+            </div>
+                <button className="relative group">
+                    <FiPlusCircle className="text-[rgba(178,178,178)] text-[2.5vh] hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+                    <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-[10vw] text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                        Add to Liked Songs
+                    </div>
+                </button>
             </div>
         </div>
-
-
 
         <div className="w-5/12">
             <div className="flex justify-center items-center mb-2 gap-6">
@@ -77,13 +77,13 @@ const MusicPlayer = () => {
 
 
 
-        <div className="w-2/12 flex items-center gap-2">
-            <AiOutlinePlaySquare color="white" className="text-2xl" />
-            <TbMicrophone2 color="white" className="text-2xl" />
-            <PiQueueLight color="white"  className="text-2xl" />
-            <LuMonitorSpeaker color="white" className="text-2xl" />
-            < HiOutlineSpeakerWave color="white" className="text-2xl" />
-
+        <div className="w-[18vw] flex items-center gap-[1.2vw]">
+                    
+            <img src={LyricsIcon} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <img src={Queue} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <img src={Speaker} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className='volume flex flex-row w-[63vw] gap-2 items-center hover:brightness-200 transform transition-transform duration-50 '>
+                <img src={Volume} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 " />
             {/* <HiSpeakerXMark className="text-2xl" /> */}
             {/* <input
                 type="range"
@@ -94,12 +94,11 @@ const MusicPlayer = () => {
             /> */}
 
             {/* Duunii changa sul taaruulah heseg */}
-            <div className='w-[60vw] max-w-[70px] bg-gray-300 rounded-full cursor-pointer'>
+                <div className='w-[7vw] h-1 bg-white rounded-full cursor-pointer'>
                 <hr className='h-1 border-none w-0 bg-green-800 rounded-full'/>
+                </div>
             </div>
-
-            <TbWindowMaximize color="white" className="text-2xl" />
-            <BsArrowsAngleContract color="white" />
+            <img src={Fullscreen} alt="" className="h-[2vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
         </div>
     </div>
   );

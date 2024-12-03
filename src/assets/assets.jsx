@@ -18,10 +18,10 @@ export const assets= {
 export const songsData = [
     {
         id:0,
-        name: "Bunny Girl", 
+        name: "Die For You", 
         image: img1, 
         file:song1, 
-        desc:"Dukiin hairt duu " , 
+        desc:"Joji" , 
         duration: "3:00"
     },
     {
