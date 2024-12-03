@@ -23,12 +23,6 @@ const Header = () => {
               What do you want to play?
             </p>
           </div>
-          <div className="right flex items-center gap-4">
-          <p className='bg-gray-500 py-1 px-3 rounded-2xl text-[15px]'>Sign up</p>
-            <p className='bg-white text-black text-[15px] px-4 py-1 rounded-2xl hidden md:block cursor-pointer'>Log in</p>
-            
-          </div>
-
       </div>
     </div>
   )
