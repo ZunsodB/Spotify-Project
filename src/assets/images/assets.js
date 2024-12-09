@@ -16,7 +16,6 @@ import zoom_icon from './zoom.png'
 import plus_icon from './plus.png'
 import arrow_icon from './arrow.png'
 import mini_player_icon from './mini-player.png'
-import volume_icon from './volume.png'
 import arrow_right from './right_arrow.png'
 import arrow_left from './left_arrow.png'
 import spotify_logo from './spotify_logo.png'
@@ -40,7 +39,7 @@ import song2 from  '../songs/song2.mp3'
 import song3 from  '../songs/song3.mp3'
 import repeat from '../images/Repeat.png'
 import LyricsIcon from '../images/Lyrics.png' 
-import Volume from './volume.png'
+import Volume from '../images/volume.png'
 import Queue from '../images/Queue.png'
 import Speaker from '../images/Connect to a device.png'
 import Fullscreen from '../images/Full screen.png'
@@ -68,7 +67,6 @@ export const assets = {
     plus_icon,
     arrow_icon,
     mini_player_icon,
-    volume_icon,
     pause_icon,
     arrow_left,
     arrow_right,
