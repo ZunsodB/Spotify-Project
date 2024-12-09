@@ -16,7 +16,6 @@ import zoom_icon from './zoom.png'
 import plus_icon from './plus.png'
 import arrow_icon from './arrow.png'
 import mini_player_icon from './mini-player.png'
-import queue_icon from './queue.png'
 import volume_icon from './volume.png'
 import arrow_right from './right_arrow.png'
 import arrow_left from './left_arrow.png'
@@ -70,7 +69,6 @@ export const assets = {
     arrow_icon,
     mini_player_icon,
     volume_icon,
-    queue_icon,
     pause_icon,
     arrow_left,
     arrow_right,
