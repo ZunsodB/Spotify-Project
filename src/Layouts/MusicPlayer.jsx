@@ -1,107 +1,123 @@
-import { songsData} from '../assets/assets'
-import { IoMdSkipBackward, IoMdSkipForward } from "react-icons/io";
-import { BiRepeat, BiShuffle } from "react-icons/bi";
-import {  FaPlay } from "react-icons/fa";
-import Fullscreen from '../assets/images/Full screen.png'
-import { FiPlusCircle } from "../Utils/icons";
-import LyricsIcon from '../assets/images/Lyrics.png' 
-import Volume from '../assets/images/Volume.png'
-import Queue from '../assets/images/Queue.png'
-import Speaker from '../assets/images/Connect to a device.png'
+import { IoIosPlayCircle } from "react-icons/io";
+import { FiPlusCircle } from "react-icons/fi";
+import { songsData } from "../assets/images/assets"; 
+import { assets } from "../assets/images/assets";
+import { Slider } from 'antd';
 const MusicPlayer = () => {
   return (
-    <div className="w-auto   flex py-[1.1%] items-center justify-between bottom-0 h-auto bg-black mx-[1.1vw]">
-        <div className="w-2/12">
-            <div className="flex items-center gap-2 relative">
-                <img src={songsData[0].image} alt="" className="h-[8vh] rounded-md" />
-                <div className="flex flex-col justify-center mx-[0.7vw]">
-                    <h3 className="text-sm font-normal mb-1 text-white">
-                        {songsData[0].name || "hi"}
-                    </h3>
-                    <span className="text-xs text-[rgba(178,178,178)]">
-                        {songsData[0].desc.slice(0, 12) || "bndi"}
-                    </span>
-            </div>
-                <button className="relative group">
-                    <FiPlusCircle className="text-[rgba(178,178,178)] text-[2.5vh] hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
-                    <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-[10vw] text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
-                        Add to Liked Songs
-                    </div>
-                </button>
-            </div>
+    <div className="bg-black py-4 px-4 flex items-center justify-between fixed bottom-0 w-full shadow-lg">
+      {/* Left Section */}
+      <div className="flex items-center w-1/4">
+        <img
+          src={songsData[0]?.image}
+          alt="Album Art"
+          className="h-[57px] w-[57px] rounded-sm mr-4"
+        />
+        <div className="flex flex-col ">
+          <p className="text-white text-sm font-medium">
+            {songsData[0]?.name || "Song Name"}
+          </p>
+          <span className="text-gray-400 text-xs">
+            {songsData[0]?.desc || "Artist Name"}
+          </span>
         </div>
+        <button className="relative group ml-4">
+            <FiPlusCircle className="text-[rgba(178,178,178)] text-[2.5vh] hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] pt-2 pb-1 rounded-md w-[10vw] text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Add to Liked Songs
+            </div>
+        </button>
+      </div>
 
-        <div className="w-5/12">
-            <div className="flex justify-center items-center mb-2 gap-6">
-                <BiShuffle color="white" />
-                <IoMdSkipBackward color="white"  />
-                <button className='flex items-center rounded-[50%] bg-white justify-center p-2' >
-                  <FaPlay className='text-black text-lg ml-[2.5px]' />
-                </button>
-                {/* {0 ? (
-                    <button
-                        onClick={handleMaster}
-                        className="flex items-center rounded-[50%] bg-white justify-center p-2"
-                    >
-                        <FaPause className="text-black text-lg" />
-                    </button>
-                ) : (
-                    <button
-                        onClick={handleMaster}
-                        className="flex items-center rounded-[50%] bg-white justify-center p-2"
-                    >
-                        <FaPlay className="text-black text-lg" />
-                    </button>
-                )} */}
-                <IoMdSkipForward color="white" />
-                <BiRepeat color="white"/>
+      {/* Center Section */}
+      <div className="flex flex-col items-center w-2/4">
+        <div className="flex items-center gap-6 mb-2">
+          <button className="relative group">
+            <img src={assets.shuffle_icon} alt="Shuffle" className="h-4 w-4.5 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-16 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Shuffle
             </div>
-            <div className="flex items-center gap-2">
-                {/* <span className="text-xs">0</span>
-                <input
-                    type="range"
-                    name=""
-                    min={0}
-                    // value={progress}
-                    // disabled={!masterSong.mp3}
-                    // onChange={changeProgress}
-                    className="w-full block"
-                    max={100}
-                />
-                <span className="text-xs">hi </span> */}
-                <div className='w-[60vw] max-w-[800px] bg-gray-300 rounded-full cursor-pointer'>
-                    <hr className='h-1 border-none w-0 bg-green-800 rounded-full'/>
-                </div>
+          </button>
+          <button className="relative group">
+            <img src={assets.prev_icon} alt="Previous" className="h-4 w-4 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-20 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Previous
             </div>
+          </button>
+          <button className="relative group"> 
+            <IoIosPlayCircle className="text-white h-11 w-11 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-14 text-md opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-5rem] top-full left-1/2 transform -translate-x-1/2">
+                Play
+            </div>
+          </button>
+          <button className="relative group">
+            <img src={assets.next_icon} alt="Next" className="h-4 w-4 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-12 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Next
+            </div>
+          </button>
+          <button className="relative group">
+            <img src={assets.repeat} alt="Repeat" className="h-4 w-4.5 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+            <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-16 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Repeat
+            </div>
+          </button>
         </div>
-
-
-
-        <div className="w-[18vw] flex items-center gap-[1.2vw]">
-                    
-            <img src={LyricsIcon} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
-            <img src={Queue} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
-            <img src={Speaker} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
-            <div className='volume flex flex-row w-[63vw] gap-2 items-center hover:brightness-200 transform transition-transform duration-50 '>
-                <img src={Volume} alt="" className="h-[2.1vh] w-10px hover:brightness-200 transform transition-transform duration-50 " />
-            {/* <HiSpeakerXMark className="text-2xl" /> */}
-            {/* <input
-                type="range"
-                name=""
-                min={0}
-                className="w-1/2 block"
-                max={100}
-            /> */}
-
-            {/* Duunii changa sul taaruulah heseg */}
-                <div className='w-[7vw] h-1 bg-white rounded-full cursor-pointer'>
-                <hr className='h-1 border-none w-0 bg-green-800 rounded-full'/>
-                </div>
-            </div>
-            <img src={Fullscreen} alt="" className="h-[2vh] w-10px hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+        {/* Progress Bar */}
+        <div className="flex items-center gap-2 w-[37vw]">
+          <span className="text-xs text-gray-400">0:00</span>
+          <div className="flex-grow bg-[rgba(75,75,75)] h-1 rounded-full relative">
+            <div
+              className="bg-white h-1 rounded-full hover:bg-green-500"
+              style={{ width: "30%" }}
+            ></div>
+          </div>
+          <span className="text-xs text-gray-400">4:00</span>
         </div>
+      </div>
+
+      {/* Right Section */}
+      <div className="flex items-center justify-end w-1/4 gap-5">
+        <button className="relative group">
+          <img src={assets.LyricsIcon} alt="Lyrics" className="h-4 w-4 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+          <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-14 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Lyrics
+          </div>
+        </button>
+        <button className="relative group">
+          <img src={assets.Queue} alt="Queue" className="h-4 w-4 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+          <div className="absolute hidden text-white bg-[rgba(31,31,31)] px-1 py-1 rounded-md w-14 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+                Queue
+          </div>
+        </button>
+        <button className="relative group">
+          <img src={assets.Speaker} alt="Speaker" className="h-4 w-4 hover:brightness-200 transform transition-transform duration-50 hover:scale-105" />
+          <div className="absolute hidden text-white bg-[rgba(31,31,31)] py-1 rounded-md w-36 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full left-1/2 transform -translate-x-1/2">
+              Connect to a device
+          </div>
+        </button>
+        <div className="flex items-center gap-2 w-[8.9vw]">
+          <img src={assets.Volume} alt="Volume" className="h-4 w-4" />
+          <Slider
+            className="w-[6.8vw] text-white"
+            tooltip={{
+              formatter: null,
+            }}
+          />
+        </div>
+        <button className="relative group">
+          <img
+            src={assets.Fullscreen}
+            alt="Fullscreen"
+            className="h-4 w-4 hover:brightness-200 transition"
+          />
+          <div className="absolute hidden text-white bg-[rgba(31,31,31)] py-1 rounded-md w-20 text-sm opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:block group-hover:translate-y-[-4rem] top-full transform -translate-x-3/4">
+              Full screen
+          </div>
+        </button>
+      </div>
     </div>
   );
-}
+};
 
-export default MusicPlayer
+export default MusicPlayer;

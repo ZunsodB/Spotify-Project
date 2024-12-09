@@ -6,6 +6,6 @@
     "moduleResolution": "bundler",
     "strict": true
   },
-  "include": ["src"],
+  "include": ["src", "src/Components/ui/slider.jsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
