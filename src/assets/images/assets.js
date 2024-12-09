@@ -37,12 +37,12 @@ import img16 from './img16.jpg'
 import song1 from  '../songs/song1.mp3'
 import song2 from  '../songs/song2.mp3'
 import song3 from  '../songs/song3.mp3'
-import Volume from '@/assets/images/volume.png'
-import Queue from '@/assets/images/queue.png'
-import Speaker from '@/assets/images/Connect to a device.png'
-import Fullscreen from '@/assets/images/Full screen.png'
-import repeat from '@/assets/images/Repeat.png'
-import LyricsIcon from '@/assets/images/Lyrics.png'
+import Volume from '/images/Volume.png'
+import Queue from '/images/Queue.png'
+import Speaker from '/images/Connect to a device.png'
+import Fullscreen from '/images/Full screen.png'
+import repeat from '/images/Repeat.png'
+import LyricsIcon from '/images/Lyrics.png'
 export const assets = {
     Fullscreen,
     repeat,
